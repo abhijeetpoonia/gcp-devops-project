@@ -9,7 +9,8 @@ steps:
 
   # Step 3: Deploy the container image to GKE
   - name: 'gcr.io/cloud-builders/gke-deploy'
-    args: 
+    args:
+      - 'run'
       - '--filename=gke.yaml'
       - '--image=gcr.io/$PROJECT_ID/gcpdevops'
       - '--location=us-central1-c'
@@ -21,4 +22,3 @@ images:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-
